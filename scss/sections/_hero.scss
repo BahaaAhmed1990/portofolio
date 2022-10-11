@@ -1,0 +1,162 @@
+@use "../custom" as *;
+
+.hero {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+
+  .text {
+    align-self: center;
+    padding-left: 12rem;
+
+    h1 {
+      margin-bottom: 0;
+      word-spacing: 15px;
+
+      .blast {
+        display: inline-block;
+        opacity: 0;
+
+        font-size: 60px;
+
+        &:hover {
+          color: $purple-light;
+        }
+      }
+    }
+    p {
+      margin: 0;
+      letter-spacing: 1px;
+
+      text-align: center;
+      display: inline-block;
+      color: $gray;
+    }
+    .flat-btn {
+      color: $purple-light;
+
+      font-size: 14px;
+      letter-spacing: 4px;
+      font-family: "Open Sans", sans-serif;
+      margin-top: 20px;
+      position: relative;
+      max-width: 220px;
+      height: 50px;
+      line-height: 50px;
+      display: block;
+      text-align: center;
+
+      div {
+        position: absolute;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        .bg {
+          position: absolute;
+          left: -5%;
+          background: $purple-light;
+          width: 0;
+          height: 100%;
+          z-index: 3;
+          -webkit-transition: 0.3s ease-out all;
+          -o-transition: 0.3s ease-out all;
+          transition: 0.3s ease-out all;
+          -webkit-transform: skewX(-10deg);
+          -ms-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+        }
+        .base {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 1px solid $purple-light;
+          left: 0;
+          z-index: 2;
+        }
+        .txt {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 4;
+        }
+      }
+      &:hover {
+        color: black;
+        span.bg {
+          width: 110%;
+        }
+      }
+    }
+  }
+  #main-svg {
+    flex-grow: 1;
+    align-self: center;
+
+    svg {
+      display: block;
+      margin: 0px auto;
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      pointer-events: none;
+
+      .p-1 {
+        fill-opacity: 0;
+        animation: p 10s ease-in-out forwards infinite;
+        animation-delay: 3s;
+      }
+      .p-2 {
+        fill-opacity: 0;
+        animation: p 10s ease-in-out forwards infinite;
+        animation-delay: 3s;
+      }
+      @keyframes p {
+        0% {
+          stroke-dashoffset: 999;
+          fill-opacity: 0;
+        }
+
+        30%,
+        100% {
+          stroke-dashoffset: 0;
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+  .scroll {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+
+    a {
+      display: flex;
+      flex-direction: column;
+      color: $gray;
+      span {
+        display: inline-block;
+        transform: rotate(90deg);
+        position: relative;
+        top: 0;
+        animation: move 1s linear 1s infinite forwards;
+      }
+      svg {
+        margin: 18px auto;
+
+        transform: rotate(0deg) translateY(7px);
+      }
+      @keyframes move {
+        0%,
+        100% {
+          top: 0px;
+        }
+        50% {
+          top: 10px;
+        }
+      }
+    }
+  }
+}

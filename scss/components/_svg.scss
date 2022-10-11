@@ -1,0 +1,17 @@
+@use "../custom" as *;
+.svg-group {
+  stroke: #f90;
+  stroke-width: 0.75mm;
+
+  .p-1 {
+    fill: $pink;
+    stroke: $pink;
+    transform: rotateY(-45deg);
+  }
+
+  .p-2 {
+    fill: $purple-dark;
+    stroke: $purple-dark;
+    transform: rotateY(-45deg) translateX(10px);
+  }
+}

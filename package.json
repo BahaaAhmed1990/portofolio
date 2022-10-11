@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-3",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "compile": "sass --watch scss:assets/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}

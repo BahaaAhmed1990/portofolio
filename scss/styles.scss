@@ -1,0 +1,28 @@
+@use "./custom" as *;
+@use "./sections/side-menu";
+@use "./components/svg";
+@use "./sections/hero";
+@use "./components/animations";
+
+// global styles
+html,
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: $bg-100;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
