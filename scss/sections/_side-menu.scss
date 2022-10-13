@@ -1,5 +1,6 @@
 @use "../custom" as *;
-.side-menu {
+@use "../components/mixins.scss" as *;
+.menu {
   width: 9rem;
   position: fixed;
   top: 0;
@@ -7,6 +8,54 @@
   bottom: 0;
   z-index: 5;
   background-color: $bg-200;
+  display: flex;
+  flex-direction: column;
+  @include respond-to("medium") {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    overflow: hidden;
+    &.open {
+      height: 100vh;
+    }
+  }
+  //menu icon
+  &_icon {
+    display: none;
+    @include respond-to("medium") {
+      display: inline-block;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: 15px;
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+    }
+  }
+  &_icon.open {
+    /* Rotate first bar */
+    .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    /* Fade out the second bar */
+    .bar2 {
+      opacity: 0;
+    }
+
+    /* Rotate last bar */
+    .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+  }
   // top logo
   &_top {
     display: flex;
@@ -16,6 +65,11 @@
     flex-direction: column;
     background-color: black;
     padding-bottom: 5px;
+
+    @include respond-to("medium") {
+      padding-top: 70px;
+      background-color: rgba(0, 0, 0, 0);
+    }
 
     a {
       display: block;
