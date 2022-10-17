@@ -10,19 +10,26 @@
   background-color: $bg-200;
   display: flex;
   flex-direction: column;
-  @include respond-to("medium") {
+  justify-content: space-between;
+
+  // medium devices styles
+
+  @include respond-to("md") {
     position: absolute;
     width: 100%;
-    height: 10%;
+    height: 4rem;
     overflow: hidden;
     &.open {
       height: 100vh;
+      justify-content: space-evenly;
     }
   }
   //menu icon
   &_icon {
     display: none;
-    @include respond-to("medium") {
+
+    // medium devices styles
+    @include respond-to("md") {
       display: inline-block;
       cursor: pointer;
       position: absolute;
@@ -66,7 +73,8 @@
     background-color: black;
     padding-bottom: 5px;
 
-    @include respond-to("medium") {
+    // medium devices styles
+    @include respond-to("md") {
       padding-top: 70px;
       background-color: rgba(0, 0, 0, 0);
     }
