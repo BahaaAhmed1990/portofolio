@@ -335,6 +335,21 @@
   -webkit-animation-duration: 5s;
 }
 
+.about-me {
+  padding-left: 12rem;
+  padding-bottom: 20rem;
+  overflow: hidden;
+}
+.about-me p {
+  transform: translate3d(0, -400%, 0);
+}
+.about-me.reveal p {
+  animation: slideInUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
 html,
 * {
   -webkit-box-sizing: border-box;

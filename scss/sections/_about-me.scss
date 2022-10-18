@@ -1,0 +1,21 @@
+@use "../custom" as *;
+@use "../components/mixins.scss" as *;
+
+// about-me
+.about-me {
+  padding-left: 12rem;
+  padding-bottom: 20rem;
+  overflow: hidden;
+
+  p {
+    transform: translate3d(0, -400%, 0);
+  }
+  &.reveal {
+    p {
+      animation: slideInUp;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+    }
+  }
+}
