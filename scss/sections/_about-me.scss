@@ -8,22 +8,72 @@
   display: flex;
   justify-content: space-between;
 
-  h1 {
-    .blast {
-      display: inline-block;
-      opacity: 0;
-      font-size: 3rem;
-      &:hover {
-        color: $purple-light;
+  // medium devices styles
+  @include respond-to("md") {
+    padding: 0px 1rem;
+  }
+  // small devices styles
+  @include respond-to("sm") {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    // extra large devices styles
+    @include respond-to("xl") {
+      display: block;
+    }
+    // small devices styles
+    @include respond-to("md") {
+      width: 90%;
+    }
+
+    h1 {
+      margin: 14rem 0 4rem 0;
+
+      // extra large devices styles
+      @include respond-to("xl") {
+        margin-bottom: 0;
+      }
+
+      .blast {
+        display: inline-block;
+        opacity: 0;
+        font-size: 3rem;
+        &:hover {
+          color: $purple-light;
+        }
+      }
+    }
+    &_text {
+      @include respond-to("md") {
+        margin-top: -40px;
+      }
+      p {
+        line-height: 1.4;
+        text-align: justify;
+        transform: translate3d(0, -800%, 0);
+        margin-bottom: 0.8rem;
       }
     }
   }
-
-  p {
-    line-height: 1.4;
-    padding-right: 4.5rem;
-    text-align: justify;
-    transform: translate3d(0, -400%, 0);
+  .right-side {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // medium devices styles
+    @include respond-to("md") {
+      width: 100%;
+    }
+    #myCanvas {
+      width: 100%;
+    }
   }
 
   // styles added when scroll

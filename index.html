@@ -8,6 +8,8 @@
     <script src="./assets/js/vendors/jquery-3.4.1.min.js"></script>
     <!-- split text vendor -->
     <script src="./assets/js/vendors/blast.min.js"></script>
+    <!-- canvas script -->
+    <script src="./assets/js/vendors/jquery.tagcanvas.js"></script>
     <script type="module" src="./assets/js/main.js" defer></script>
 
     <link
@@ -190,34 +192,72 @@
     <div class="about-me section">
       <div class="left-side">
         <h1>About &nbsp; me</h1>
-        <p>
-          I am a front-end developer for +3 years of experience.I use front-end
-          technologies like HTML, CSS, JS, SASS, REACT, WEBPACK, and version
-          control system GIT. I always seeking for improving my skills by
-          learning new technologies to improve the quality of my work.
-        </p>
-        <p>
-          I am a front-end developer for +3 years of experience.I use front-end
-          technologies like HTML, CSS, JS, SASS, REACT, WEBPACK, and version
-          control system GIT. I always seeking for improving my skills by
-          learning new technologies to improve the quality of my work.
-        </p>
+        <div class="left-side_text">
+          <p>
+            I am a front-end developer for +3 years of experience.I use
+            front-end technologies like HTML, CSS, JS, SASS, REACT, WEBPACK, and
+            version control system GIT. I always seeking for improving my skills
+            by learning new technologies to improve the quality of my work.
+          </p>
+          <p>
+            I am a front-end developer for +3 years of experience.I use
+            front-end technologies like HTML, CSS, JS, SASS, REACT, WEBPACK, and
+            version control system GIT. I always seeking for improving my skills
+            by learning new technologies to improve the quality of my work.
+          </p>
+        </div>
       </div>
-      <div class="right-side">
-        <canvas height="300" width="300">
+      <div class="right-side" id="myCanvasContainer">
+        <canvas height="500" width="500" id="myCanvas">
           <ul>
-            <li>HTML</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JS</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">Bootstrap</a></li>
+            <li><a href="#">SASS</a></li>
+            <li><a href="#">Git</a></li>
+            <li><a href="#">REACT</a></li>
+            <li><a href="#">Redux</a></li>
+            <li><a href="#">Webpack</a></li>
+            <li><a href="#">NPM</a></li>
+            <li><a href="#">Node JS</a></li>
+            <li><a href="#">Restful API</a></li>
+            <li><a href="#">MONGO DB</a></li>
+            <li><a href="#">JSON</a></li>
+            <li><a href="#">GSAP</a></li>
           </ul>
         </canvas>
       </div>
     </div>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (
+          !$("#myCanvas").tagcanvas({
+            textColour: "#08FDD8",
+            outlineThickness: 0.5,
+            outlineColour: "#FE0853",
+            maxSpeed: 0.06,
+            freezeActive: true,
+            shuffleTags: true,
+            shape: "sphere",
+            zoom: 0.8,
+            wheelZoom: false,
+            noSelect: true,
+            textFont: "sans-serif,Arial",
+            textHeight: 16,
+            freezeDecel: true,
+            fadeIn: 3000,
+            initial: [0.3, -0.1],
+            depth: 1.1,
+          })
+        ) {
+          // TagCanvas failed to load
+          $("#myCanvasContainer").hide();
+        }
+        // your other jQuery stuff here...
+      });
+    </script>
   </body>
 </html>

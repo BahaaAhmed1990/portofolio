@@ -9,6 +9,9 @@ $breakpoints: (
     max-width: 992px,
   ),
   "lg": (
+    min-width: 993px,
+  ),
+  "xl": (
     min-width: 1200px,
   ),
 ) !default;

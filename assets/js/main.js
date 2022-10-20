@@ -6,6 +6,7 @@ import menu from "../js/app/app-menu.js";
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
+
   //======== start menu
   if ($(".menu")) {
     menu.init();

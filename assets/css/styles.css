@@ -341,19 +341,73 @@
   display: flex;
   justify-content: space-between;
 }
-.about-me h1 .blast {
+@media (max-width: 992px) {
+  .about-me {
+    padding: 0px 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.about-me .left-side {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media (min-width: 1200px) {
+  .about-me .left-side {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  .about-me .left-side {
+    width: 90%;
+  }
+}
+.about-me .left-side h1 {
+  margin: 14rem 0 4rem 0;
+}
+@media (min-width: 1200px) {
+  .about-me .left-side h1 {
+    margin-bottom: 0;
+  }
+}
+.about-me .left-side h1 .blast {
   display: inline-block;
   opacity: 0;
   font-size: 3rem;
 }
-.about-me h1 .blast:hover {
+.about-me .left-side h1 .blast:hover {
   color: #bb6ef5;
 }
-.about-me p {
+@media (max-width: 992px) {
+  .about-me .left-side_text {
+    margin-top: -40px;
+  }
+}
+.about-me .left-side_text p {
   line-height: 1.4;
-  padding-right: 4.5rem;
   text-align: justify;
-  transform: translate3d(0, -400%, 0);
+  transform: translate3d(0, -800%, 0);
+  margin-bottom: 0.8rem;
+}
+.about-me .right-side {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .about-me .right-side {
+    width: 100%;
+  }
+}
+.about-me .right-side #myCanvas {
+  width: 100%;
 }
 .about-me.reveal p {
   animation: slideInUp;
