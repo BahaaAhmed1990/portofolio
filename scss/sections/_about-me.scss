@@ -4,12 +4,29 @@
 // about-me
 .about-me {
   padding-left: 12rem;
-  padding-bottom: 20rem;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    .blast {
+      display: inline-block;
+      opacity: 0;
+      font-size: 3rem;
+      &:hover {
+        color: $purple-light;
+      }
+    }
+  }
 
   p {
+    line-height: 1.4;
+    padding-right: 4.5rem;
+    text-align: justify;
     transform: translate3d(0, -400%, 0);
   }
+
+  // styles added when scroll
   &.reveal {
     p {
       animation: slideInUp;

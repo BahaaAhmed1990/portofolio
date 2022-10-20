@@ -1,7 +1,7 @@
 export default (function () {
   const home = {
     init: function () {
-      $("#txt").blast({ delimiter: "character", tag: "span" });
+      $("h1").blast({ delimiter: "character", tag: "span" });
     },
     initSectionHome: function () {
       var hero = jQuery(".hero");

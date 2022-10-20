@@ -337,10 +337,22 @@
 
 .about-me {
   padding-left: 12rem;
-  padding-bottom: 20rem;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+.about-me h1 .blast {
+  display: inline-block;
+  opacity: 0;
+  font-size: 3rem;
+}
+.about-me h1 .blast:hover {
+  color: #bb6ef5;
 }
 .about-me p {
+  line-height: 1.4;
+  padding-right: 4.5rem;
+  text-align: justify;
   transform: translate3d(0, -400%, 0);
 }
 .about-me.reveal p {
