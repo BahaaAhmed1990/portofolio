@@ -6,8 +6,16 @@
   padding-left: 12rem;
   overflow: hidden;
 
+  // medium devices styles
+  @include respond-to("md") {
+    padding: 0px 1rem;
+  }
+
   // text section
   &_text {
+    p {
+      transform: translate3d(0, -800%, 0);
+    }
     .blast {
       display: inline-block;
       opacity: 0;
@@ -21,16 +29,46 @@
   // portfolio section
   &_items {
     overflow: hidden;
+    transform: translate3d(-800%, 0, 0);
     #portfolio-filter {
       display: grid;
-      grid-template-columns: 220px 220px;
+      grid-template-columns: 220px 220px 220px;
       column-gap: 20px;
+      // extra small devices styles
+      @include respond-to("xs") {
+        padding: 0;
+        column-gap: 10px;
+        grid-template-columns: 120px 120px 120px;
+      }
       .flat-btn {
         @include flat-btn;
+        //small devices styles
+        @include respond-to("sm") {
+          margin-top: 0;
+          max-width: 200px;
+        }
+        @include respond-to("xs") {
+          max-width: 120px;
+        }
+      }
+
+      li.current {
+        color: black;
+        span.bg {
+          width: 110%;
+        }
       }
     }
     #portfolio-list {
       z-index: 1;
+      //small devices styles
+      @include respond-to("sm") {
+        margin: 30px;
+      }
+      // extra small devices styles
+      @include respond-to("xs") {
+        margin: auto;
+      }
       li {
         width: 300px;
         height: 300px;
@@ -84,7 +122,7 @@
         &:hover {
           cursor: pointer;
           .hover-content {
-            transform: scale(1.2);
+            transform: scale(1.1);
           }
           .link {
             opacity: 1;
@@ -97,12 +135,42 @@
           }
         }
       }
+
       li:nth-child(1) {
         .hover-content {
           background: url("../../assets/images/cover.jpg");
           background-size: cover;
         }
       }
+
+      li:nth-child(2) {
+        .hover-content {
+          background: url("../../assets/images/cover.jpg");
+          background-size: cover;
+        }
+      }
+
+      li:nth-child(3) {
+        .hover-content {
+          background: url("../../assets/images/cover.jpg");
+          background-size: cover;
+        }
+      }
+    }
+  }
+  // scroll add on scroll
+  &.reveal {
+    .portfolio_text p {
+      animation: slideInUp;
+      animation-duration: 1.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
+    }
+    .portfolio_items {
+      animation: slideInLeft;
+      animation-duration: 1.75s;
+      animation-fill-mode: forwards;
+      animation-delay: 0.5s;
     }
   }
 }

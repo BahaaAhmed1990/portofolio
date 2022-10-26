@@ -46,7 +46,18 @@ export default (function () {
       $("#portfolio-filter")
         .find("li")
         .click(function () {
-          var selector = $(this).attr("data-filter");
+          const elem = $(this);
+          var selector = elem.attr("data-filter");
+
+          //remove current from all btns
+          $("#portfolio-filter")
+            .find("li")
+            .each(function () {
+              $(this).removeClass("current");
+            });
+
+          // add current to li
+          elem.addClass("current");
           $("#portfolio-list").isotope({
             filter: selector,
             animationOptions: {

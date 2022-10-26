@@ -19,7 +19,7 @@ import protfolio from "./app/protfolio.js";
     home.initSectionHome();
   }
   // add animation on scroll
-  var open;
+  var aboutMeOpen, portfolioOpen;
   function reveal() {
     const sections = $(".section");
     for (let i = 0; i < sections.length; i++) {
@@ -29,10 +29,20 @@ import protfolio from "./app/protfolio.js";
 
       if (elementVisible < windowHeight - elementTop) {
         sections[i].classList.add("reveal");
-        if (open === undefined) {
+        if (
+          aboutMeOpen === undefined &&
+          sections[i].classList.contains("about-me")
+        ) {
           aboutMe.init();
+          aboutMeOpen = true;
         }
-        open = true;
+        if (
+          portfolioOpen === undefined &&
+          sections[i].classList.contains("portfolio")
+        ) {
+          protfolio.init();
+          portfolioOpen = true;
+        }
       }
     }
   }
@@ -47,7 +57,6 @@ import protfolio from "./app/protfolio.js";
 
   //======== portfolio
   if ($(".portfolio")) {
-    protfolio.init();
     protfolio.initProjects();
   }
 })();
