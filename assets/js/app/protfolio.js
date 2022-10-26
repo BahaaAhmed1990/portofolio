@@ -1,10 +1,10 @@
 export default (function () {
-  var aboutMe = {
+  var portfolio = {
     init: function () {
-      var about = $(".about-me");
+      var portfolio = $(".portfolio");
       var a = 100;
       // add animation on scroll to section
-      about.find(".blast").each(function () {
+      portfolio.find(".blast").each(function () {
         let elem = $(this);
         a += 100;
         setTimeout(() => {
@@ -15,14 +15,14 @@ export default (function () {
       // add char animation
       setTimeout(() => {
         // remove the start aimation
-        about.find(".blast").each(function () {
+        portfolio.find(".blast").each(function () {
           $(this)
             .removeClass("animate__animated animate__fadeIn")
             .css("opacity", 1);
         });
 
         // add event listener
-        about.find(".blast").each(function () {
+        portfolio.find(".blast").each(function () {
           const elem = $(this);
           elem.mouseenter(function () {
             elem.addClass("animate__animated animate__rubberBand");
@@ -36,31 +36,28 @@ export default (function () {
         });
       }, 1000);
     },
-    initCanvas: function () {
-      if (
-        !$("#myCanvas").tagcanvas({
-          textColour: "#bb6ef5",
-          outlineThickness: 0.5,
-          outlineColour: "#FE0853",
-          maxSpeed: 0.06,
-          freezeActive: true,
-          shuffleTags: true,
-          shape: "sphere",
-          zoom: 0.8,
-          wheelZoom: false,
-          noSelect: true,
-          textFont: "sans-serif,Arial",
-          textHeight: 16,
-          freezeDecel: true,
-          fadeIn: 3000,
-          initial: [0.3, -0.1],
-          depth: 1.1,
-        })
-      ) {
-        // TagCanvas failed to load
-        $("#myCanvasContainer").hide();
-      }
+    initProjects: function () {
+      $("#portfolio-list").isotope({
+        filter: "*",
+        layoutMode: "masonry",
+        animationOptions: { duration: "750", easing: "linear" },
+      });
+
+      $("#portfolio-filter")
+        .find("li")
+        .click(function () {
+          var selector = $(this).attr("data-filter");
+          $("#portfolio-list").isotope({
+            filter: selector,
+            animationOptions: {
+              duration: "750",
+              easing: "linear",
+              queue: "false",
+            },
+          });
+          return false;
+        });
     },
   };
-  return aboutMe;
+  return portfolio;
 })();

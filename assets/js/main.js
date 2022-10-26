@@ -1,10 +1,11 @@
 import aboutMe from "../js/app/about-me.js";
 import home from "../js/app/app-home.js";
 import menu from "../js/app/app-menu.js";
+import protfolio from "./app/protfolio.js";
 (function () {
   //forcing scroll to top on reload
   window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   };
 
   //======== start menu
@@ -41,5 +42,12 @@ import menu from "../js/app/app-menu.js";
 
   //======== about-me
   if ($(".about-me")) {
+    aboutMe.initCanvas();
+  }
+
+  //======== portfolio
+  if ($(".portfolio")) {
+    protfolio.init();
+    protfolio.initProjects();
   }
 })();

@@ -1,3 +1,4 @@
+@use "../custom" as *;
 $breakpoints: (
   "xs": (
     max-width: 600px,
@@ -31,5 +32,69 @@ $breakpoints: (
   @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
           + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin flat-btn() {
+  color: $purple-light;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+  position: relative;
+  max-width: 220px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+
+  // small devices
+  @include respond-to("md") {
+    margin-top: 70px;
+  }
+
+  div {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+
+    .bg {
+      position: absolute;
+      left: -5%;
+      background: $purple-light;
+      width: 0;
+      height: 100%;
+      z-index: 3;
+      -webkit-transition: 0.3s ease-out all;
+      -o-transition: 0.3s ease-out all;
+      transition: 0.3s ease-out all;
+      -webkit-transform: skewX(-10deg);
+      -ms-transform: skewX(-10deg);
+      transform: skewX(-10deg);
+    }
+    .base {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $purple-light;
+      left: 0;
+      z-index: 2;
+    }
+    .txt {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+    }
+  }
+  &:hover {
+    color: black;
+    span.bg {
+      width: 110%;
+    }
   }
 }

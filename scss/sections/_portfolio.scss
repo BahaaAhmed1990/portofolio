@@ -1,0 +1,108 @@
+@use "../custom" as *;
+@use "../components/mixins.scss" as *;
+
+// portfoli
+.portfolio {
+  padding-left: 12rem;
+  overflow: hidden;
+
+  // text section
+  &_text {
+    .blast {
+      display: inline-block;
+      opacity: 0;
+      font-size: 3rem;
+      &:hover {
+        color: $purple-light;
+      }
+    }
+  }
+
+  // portfolio section
+  &_items {
+    overflow: hidden;
+    #portfolio-filter {
+      display: grid;
+      grid-template-columns: 220px 220px;
+      column-gap: 20px;
+      .flat-btn {
+        @include flat-btn;
+      }
+    }
+    #portfolio-list {
+      z-index: 1;
+      li {
+        width: 300px;
+        height: 300px;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+        .hover-content {
+          transition: all 0.3s ease-in-out;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0);
+          z-index: 3;
+          .link {
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: $pink;
+            position: absolute;
+            top: 48%;
+            left: 50%;
+            transform: translate((-50%, -50%)) scale(0.2);
+            line-height: 150px;
+            text-align: center;
+            font-weight: 900;
+            word-spacing: -2px;
+            letter-spacing: 0px;
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s, word-spacing 1s,
+              letter-spacing 1s;
+          }
+          .text {
+            position: absolute;
+            bottom: -60px;
+            display: block;
+            right: 0;
+            left: 0;
+            text-align: center;
+            transition: bottom 0.3s ease-in-out;
+            p {
+              margin: 0;
+              font-size: 1rem;
+            }
+            span {
+              font-size: 0.7rem;
+            }
+          }
+        }
+        &:hover {
+          cursor: pointer;
+          .hover-content {
+            transform: scale(1.2);
+          }
+          .link {
+            opacity: 1;
+            transform: translate((-50%, -50%)) scale(0.8);
+            word-spacing: 3px;
+            letter-spacing: 3px;
+          }
+          .text {
+            bottom: 25px;
+          }
+        }
+      }
+      li:nth-child(1) {
+        .hover-content {
+          background: url("../../assets/images/cover.jpg");
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

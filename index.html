@@ -10,6 +10,8 @@
     <script src="./assets/js/vendors/blast.min.js"></script>
     <!-- canvas script -->
     <script src="./assets/js/vendors/jquery.tagcanvas.js"></script>
+    <!-- isotobe  -->
+    <script src="./assets/js/vendors/isotobe.js"></script>
     <script type="module" src="./assets/js/main.js" defer></script>
 
     <link
@@ -231,33 +233,58 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-      $(document).ready(function () {
-        if (
-          !$("#myCanvas").tagcanvas({
-            textColour: "#08FDD8",
-            outlineThickness: 0.5,
-            outlineColour: "#FE0853",
-            maxSpeed: 0.06,
-            freezeActive: true,
-            shuffleTags: true,
-            shape: "sphere",
-            zoom: 0.8,
-            wheelZoom: false,
-            noSelect: true,
-            textFont: "sans-serif,Arial",
-            textHeight: 16,
-            freezeDecel: true,
-            fadeIn: 3000,
-            initial: [0.3, -0.1],
-            depth: 1.1,
-          })
-        ) {
-          // TagCanvas failed to load
-          $("#myCanvasContainer").hide();
-        }
-        // your other jQuery stuff here...
-      });
-    </script>
+    <!-- portfolio -->
+    <div class="portfolio section">
+      <div class="portfolio_text">
+        <h1>My Work</h1>
+        <p>A small gallery of recent projects chosen by me.</p>
+      </div>
+      <div class="portfolio_items">
+        <!-- filter buttons -->
+        <ul id="portfolio-filter">
+          <li data-filter="*" class="flat-btn current transition">
+            <div>
+              <span class="bg"></span>
+              <span class="base"></span>
+              <span class="txt"> All </span>
+            </div>
+          </li>
+
+          <li data-filter=".html-css" class="flat-btn transition">
+            <div>
+              <span class="bg"></span>
+              <span class="base"></span>
+              <span class="txt"> web </span>
+            </div>
+          </li>
+        </ul>
+        <!-- portfolio list -->
+        <ul id="portfolio-list">
+          <li class="html-css">
+            <div class="hover-content">
+              <a href="#" class="link">view project</a>
+              <a href="" class="text">
+                <p class="title">app landing page</p>
+                <span class="categorie"> HTML CSS JS</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="photography">
+            <a href="" class="folio">
+              <h2 class="title">app landing page</h2>
+              <span class="categorie"> HTML CSS JS</span>
+            </a>
+          </li>
+
+          <li class="illustration">
+            <a href="" class="folio">
+              <h2 class="title">app landing page</h2>
+              <span class="categorie"> HTML CSS JS</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
