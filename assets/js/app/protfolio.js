@@ -1,3 +1,4 @@
+import modal from "./modal.js";
 export default (function () {
   var portfolio = {
     init: function () {
@@ -67,6 +68,24 @@ export default (function () {
             },
           });
           return false;
+        });
+      // add modal
+      $("#portfolio-list")
+        .find("li")
+        .click(function (e) {
+          e.preventDefault();
+          // show the modal container
+          $(".modal").show();
+
+          // find the images from his link
+          const imgArr = $(this).find(".slide-img");
+
+          // start lideshow with images array
+          modal.initSlideShow(imgArr);
+
+          $(".close-btn").click(function (e) {
+            $(".modal").hide();
+          });
         });
     },
   };
