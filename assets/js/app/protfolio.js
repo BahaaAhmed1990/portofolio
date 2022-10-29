@@ -77,15 +77,15 @@ export default (function () {
           // show the modal container
           $(".modal").show();
 
+          $(".close-btn").click(function (e) {
+            $(".slideshow-container").empty();
+            $(".modal").hide();
+          });
           // find the images from his link
           const imgArr = $(this).find(".slide-img");
 
           // start lideshow with images array
           modal.initSlideShow(imgArr);
-
-          $(".close-btn").click(function (e) {
-            $(".modal").hide();
-          });
         });
     },
   };
