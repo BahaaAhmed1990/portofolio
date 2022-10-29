@@ -17,30 +17,35 @@ export default (function () {
         msg.attr("class", "slideshow-msg");
         $(".slideshow-container").append(msg);
       }
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function showSlides(n) {
+        const slides = $(".myslides");
+        //check for last image
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        //check for first image
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        // make all slides disappear
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "flex";
+      }
 
       // add eventlistener functions to previous and next controllers
-      $(".next").click(this.plusSlide(1));
-      $(".prev").click(this.plusSlide(-1));
+      $(".prev").click(function () {
+        showSlides((slideIndex -= 1));
+      });
+      $(".next").click(function () {
+        showSlides((slideIndex += 1));
+      });
     },
-    plusSlide: function (n) {
-      let slideIndex = 1;
-      console.log(slideIndex);
-      const slides = $(".myslides");
-      //check for last image
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      //check for first image
-      if (n < 1) {
-        slideIndex = 0;
-      }
-      // make all slides disappear
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      console.log(slideIndex - 1);
-      slides[slideIndex - 1].style.display = "block";
-    },
+    plusSlide: function (n) {},
   };
 
   return modal;
