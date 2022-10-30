@@ -29,7 +29,7 @@
   justify-content: center;
 }
 .modal .slideshow-container .myslides img {
-  width: 60%;
+  width: 100%;
   border: 18px solid #333;
   border-radius: 20px;
   margin-top: 3rem;
@@ -672,11 +672,11 @@
   bottom: 25px;
 }
 .portfolio_items #portfolio-list li:nth-child(1) .hover-content {
-  background: url("../../assets/images/cover.jpg");
+  background: url("../../assets/images/applap-cover.jpg");
   background-size: cover;
 }
 .portfolio_items #portfolio-list li:nth-child(2) .hover-content {
-  background: url("../../assets/images/cover.jpg");
+  background: url("../../assets/images/social-media-cover.jpg");
   background-size: cover;
 }
 .portfolio_items #portfolio-list li:nth-child(3) .hover-content {

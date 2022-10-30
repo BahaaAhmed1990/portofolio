@@ -16,6 +16,7 @@ export default (function () {
         const msg = $("<p>No Img Found</p>");
         msg.attr("class", "slideshow-msg");
         $(".slideshow-container").append(msg);
+        return;
       }
       let slideIndex = 1;
       showSlides(slideIndex);

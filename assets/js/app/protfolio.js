@@ -7,7 +7,7 @@ export default (function () {
       // add animation on scroll to section
       portfolio.find(".blast").each(function () {
         let elem = $(this);
-        a += 100;
+        a += 200;
         setTimeout(() => {
           elem.addClass("animate__animated animate__fadeIn");
         }, a);
@@ -35,7 +35,7 @@ export default (function () {
             );
           });
         });
-      }, 1000);
+      }, 1500);
     },
     initProjects: function () {
       $("#portfolio-list").isotope({
@@ -74,10 +74,14 @@ export default (function () {
         .find("li")
         .click(function (e) {
           e.preventDefault();
+          //prevent body from scroll
+          $("body").css("overflow-y", "hidden");
           // show the modal container
           $(".modal").show();
 
+          //add eventlistener to close buttons
           $(".close-btn").click(function (e) {
+            $("body").css("overflow-y", "scroll");
             $(".slideshow-container").empty();
             $(".modal").hide();
           });
