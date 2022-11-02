@@ -2,6 +2,8 @@ import aboutMe from "../js/app/about-me.js";
 import home from "../js/app/app-home.js";
 import menu from "../js/app/app-menu.js";
 import protfolio from "./app/protfolio.js";
+import contact from "./app/contact.js";
+
 (function () {
   //forcing scroll to top on reload
   window.onbeforeunload = function () {
@@ -19,7 +21,7 @@ import protfolio from "./app/protfolio.js";
     home.initSectionHome();
   }
   // add animation on scroll
-  var aboutMeOpen, portfolioOpen;
+  var aboutMeOpen, portfolioOpen, contactOpen;
   function reveal() {
     const sections = $(".section");
     for (let i = 0; i < sections.length; i++) {
@@ -43,6 +45,13 @@ import protfolio from "./app/protfolio.js";
           protfolio.init();
           portfolioOpen = true;
         }
+        if (
+          contactOpen === undefined &&
+          sections[i].classList.contains("contact")
+        ) {
+          contact.init();
+          contactOpen = true;
+        }
       }
     }
   }
@@ -58,5 +67,10 @@ import protfolio from "./app/protfolio.js";
   //======== portfolio
   if ($(".portfolio")) {
     protfolio.initProjects();
+  }
+
+  //======== contact
+  if ($(".contact")) {
+    console.log("from contact section");
   }
 })();

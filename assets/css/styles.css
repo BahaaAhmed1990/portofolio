@@ -680,7 +680,7 @@
   background-size: cover;
 }
 .portfolio_items #portfolio-list li:nth-child(3) .hover-content {
-  background: url("../../assets/images/cover.jpg");
+  background: url("../../assets/images/applap-cover.jpg");
   background-size: cover;
 }
 .portfolio.reveal .portfolio_text p {
@@ -694,6 +694,154 @@
   animation-duration: 1.75s;
   animation-fill-mode: forwards;
   animation-delay: 0.5s;
+}
+
+.contact {
+  padding-left: 12rem;
+}
+.contact .text h1 .blast {
+  display: inline-block;
+  opacity: 0;
+  font-size: 3rem;
+}
+.contact .text h1 .blast:hover {
+  color: #bb6ef5;
+}
+.contact .text p {
+  width: 50%;
+  line-height: 1.5;
+  text-align: justify;
+}
+.contact .form {
+  padding-right: 1rem;
+  overflow: hidden;
+}
+.contact .form .form-control {
+  overflow: hidden;
+}
+.contact .form input[type=text],
+.contact .form input[type=email],
+.contact .form textarea {
+  background-color: #2b2b2b;
+  border: none;
+  outline: none;
+  color: #8d8d8d;
+  padding: 0 20px;
+  font-size: 1rem;
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.contact .form .half {
+  width: 49%;
+  display: inline-block;
+}
+.contact .form .half:nth-child(2) {
+  float: right;
+}
+.contact .form textarea {
+  height: 150px;
+  resize: vertical;
+  padding-top: 20px;
+  margin: 0 !important;
+}
+.contact .form .name-label,
+.contact .form .email-label,
+.contact .form .subject-label,
+.contact .form .textarea-label {
+  position: relative;
+  width: 100%;
+  display: block;
+  height: 23px;
+  overflow: hidden;
+}
+.contact .form label::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: #87e578;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.3s ease-in-out;
+}
+.contact .form .name-label::after,
+.contact .form .email-label::after {
+  background-color: brown;
+}
+.contact .form input:focus + label::after {
+  transform: translate3d(0, 0, 0);
+}
+.contact .form .textarea-label {
+  border-top: 1px solid #87e578;
+  transition: transform 0.3s ease-in-out;
+  transform: translate3d(100%, 0, 0);
+}
+.contact .form input:focus::placeholder {
+  color: transparent;
+}
+.contact .form textarea:focus::placeholder {
+  color: transparent;
+}
+.contact .form .flat-btn {
+  color: #bb6ef5;
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+  position: relative;
+  max-width: 220px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .contact .form .flat-btn {
+    margin-top: 70px;
+  }
+}
+.contact .form .flat-btn div {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.contact .form .flat-btn div .bg {
+  position: absolute;
+  left: -5%;
+  background: #bb6ef5;
+  width: 0;
+  height: 100%;
+  z-index: 3;
+  -webkit-transition: 0.3s ease-out all;
+  -o-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+  -webkit-transform: skewX(-10deg);
+  -ms-transform: skewX(-10deg);
+  transform: skewX(-10deg);
+}
+.contact .form .flat-btn div .base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #bb6ef5;
+  left: 0;
+  z-index: 2;
+}
+.contact .form .flat-btn div .txt {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+.contact .form .flat-btn:hover {
+  color: black;
+}
+.contact .form .flat-btn:hover span.bg {
+  width: 110%;
 }
 
 html,
