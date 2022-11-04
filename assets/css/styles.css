@@ -508,8 +508,8 @@
 @media (max-width: 600px) {
   .portfolio_items #portfolio-filter {
     padding: 0;
-    column-gap: 10px;
-    grid-template-columns: 120px 120px 120px;
+    column-gap: 0;
+    grid-template-columns: 90px 90px 90px;
   }
 }
 .portfolio_items #portfolio-filter .flat-btn {
@@ -581,7 +581,7 @@
 }
 @media (max-width: 600px) {
   .portfolio_items #portfolio-filter .flat-btn {
-    max-width: 120px;
+    max-width: 76px;
   }
 }
 .portfolio_items #portfolio-filter li.current {
@@ -698,6 +698,14 @@
 
 .contact {
   padding-left: 12rem;
+  overflow: hidden;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+@media (max-width: 992px) {
+  .contact {
+    padding: 5rem 1rem;
+  }
 }
 .contact .text h1 .blast {
   display: inline-block;
@@ -711,10 +719,19 @@
   width: 50%;
   line-height: 1.5;
   text-align: justify;
+  transform: translateX(-2000px) scale(0.7);
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .contact .text p {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
 }
 .contact .form {
   padding-right: 1rem;
   overflow: hidden;
+  transform: translate3d(100%, 0, 0);
 }
 .contact .form .form-control {
   overflow: hidden;
@@ -736,8 +753,19 @@
   width: 49%;
   display: inline-block;
 }
+@media (max-width: 600px) {
+  .contact .form .half {
+    width: 100%;
+    display: block;
+  }
+}
 .contact .form .half:nth-child(2) {
   float: right;
+}
+@media (max-width: 600px) {
+  .contact .form .half:nth-child(2) {
+    float: none;
+  }
 }
 .contact .form textarea {
   height: 150px;
@@ -761,7 +789,7 @@
   height: 1px;
   width: 100%;
   background-color: #87e578;
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
   transition: transform 0.3s ease-in-out;
 }
 .contact .form .name-label::after,
@@ -842,6 +870,24 @@
 }
 .contact .form .flat-btn:hover span.bg {
   width: 110%;
+}
+@media (max-width: 992px) {
+  .contact .form .flat-btn {
+    margin-top: 0;
+  }
+}
+.contact.reveal .text p {
+  animation: backInLeft;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-in-out;
+}
+.contact.reveal .form {
+  animation: slideInLeft;
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.75s;
 }
 
 html,

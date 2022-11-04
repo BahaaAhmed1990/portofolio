@@ -6,7 +6,7 @@ export default (function () {
       // add animation on scroll to section
       contact.find(".blast").each(function () {
         let elem = $(this);
-        a += 200;
+        a += 100;
         setTimeout(() => {
           elem.addClass("animate__animated animate__fadeIn");
         }, a);

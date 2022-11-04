@@ -37,8 +37,8 @@
       // extra small devices styles
       @include respond-to("xs") {
         padding: 0;
-        column-gap: 10px;
-        grid-template-columns: 120px 120px 120px;
+        column-gap: 0;
+        grid-template-columns: 90px 90px 90px;
       }
       .flat-btn {
         @include flat-btn;
@@ -48,7 +48,7 @@
           max-width: 200px;
         }
         @include respond-to("xs") {
-          max-width: 120px;
+          max-width: 76px;
         }
       }
 
