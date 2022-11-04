@@ -890,6 +890,24 @@
   animation-delay: 0.75s;
 }
 
+footer {
+  background-color: #181818;
+  padding-left: 12rem;
+  display: flex;
+  justify-content: space-around;
+  height: 30px;
+  align-items: center;
+}
+footer span a {
+  color: #87e578;
+}
+footer a {
+  color: white;
+}
+footer a span {
+  color: #87e578;
+}
+
 html,
 * {
   -webkit-box-sizing: border-box;
