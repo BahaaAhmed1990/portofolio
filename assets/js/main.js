@@ -56,7 +56,35 @@ import contact from "./app/contact.js";
     }
   }
 
+  function navHighter() {
+    const sections = $("section[id]");
+    // Get current scroll position
+    let scrollY = window.pageYOffset;
+
+    //loop through sections get height,top and id
+    sections.each(function () {
+      let sectionHeight = $(this)[0].offsetHeight;
+      // console.log($(this)[0].getBoundingClientRect().top);
+      // console.log(window.pageYOffset);
+      const sectionTop =
+        $(this)[0].getBoundingClientRect().top + window.pageYOffset - 100;
+      // console.log(sectionTop);
+      const sectionId = $(this)[0].getAttribute("id");
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document
+          .querySelector(".menu_nav a[href*=" + sectionId + "]")
+          .classList.add("active");
+        console.log(sectionId);
+      } else {
+        document
+          .querySelector(".menu_nav a[href*=" + sectionId + "]")
+          .classList.remove("active");
+      }
+    });
+  }
   window.addEventListener("scroll", reveal);
+  window.addEventListener("scroll", navHighter);
   reveal();
 
   //======== about-me

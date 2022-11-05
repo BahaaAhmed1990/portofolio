@@ -38,14 +38,14 @@
   </head>
   <body>
     <!-- modal -->
-    <div class="modal">
+    <section class="modal">
       <button class="close-btn">x</button>
       <div class="slideshow-container"></div>
       <a class="prev" title="previous image">&#10094;</a>
       <a class="next" title="next image">&#10095;</a>
-    </div>
+    </section>
     <!-- side menu -->
-    <div class="menu">
+    <section class="menu">
       <!-- hamburgers -->
       <div class="menu_icon">
         <div class="bar1"></div>
@@ -54,7 +54,7 @@
       </div>
       <!-- logo -->
       <div class="menu_top">
-        <a href="#">
+        <a href="#hero">
           <svg
             width="144"
             height="144"
@@ -86,16 +86,16 @@
       </div>
       <!-- side nav -->
       <nav class="menu_nav">
-        <a rel="about" href="">About</a>
-        <a rel="skills" href="">My Skills</a>
-        <a rel="work" href="">Work</a>
-        <a rel="contact" href="">Contact</a>
+        <a rel="hero" href="#hero" class="active">Home</a>
+        <a rel="skills" href="#about-me">My Skills</a>
+        <a rel="work" href="#portfolio">Work</a>
+        <a rel="contact" href="#contact">Contact</a>
       </nav>
       <!-- social links -->
 
       <ul class="menu_socials">
         <li>
-          <a href="">
+          <a href="https://www.linkedin.com/in/eng-bahaaahmed" target="_blank">
             <svg
               width="16px"
               aria-hidden="true"
@@ -114,7 +114,10 @@
           </a>
         </li>
         <li>
-          <a href=""
+          <a
+            href="https://github.com/BahaaAhmed1990
+          "
+            target="_blank"
             ><svg
               width="16px"
               aria-hidden="true"
@@ -134,9 +137,9 @@
           </a>
         </li>
       </ul>
-    </div>
+    </section>
     <!-- hero -->
-    <div class="hero">
+    <section id="hero" class="hero section">
       <div class="text">
         <h1 id="txt">
           Hi,<br />
@@ -144,7 +147,7 @@
           Web Developer
         </h1>
         <p>Front &nbsp; End &nbsp; Developer</p>
-        <a href="#" class="flat-btn">
+        <a href="#contact" class="flat-btn">
           <div>
             <span class="bg"></span>
             <span class="base"></span>
@@ -196,9 +199,9 @@
           </svg>
         </a>
       </div>
-    </div>
+    </section>
     <!-- about-me -->
-    <div class="about-me section">
+    <section id="about-me" class="about-me section">
       <div class="left-side">
         <h1>About &nbsp; me</h1>
         <div class="left-side_text">
@@ -232,10 +235,10 @@
           </ul>
         </canvas>
       </div>
-    </div>
+    </section>
 
     <!-- portfolio -->
-    <div class="portfolio section">
+    <section id="portfolio" class="portfolio section">
       <div class="portfolio_text">
         <h1>My Work</h1>
         <p>A small gallery of recent projects chosen by me.</p>
@@ -317,10 +320,10 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
 
     <!-- contact-me -->
-    <div class="contact section">
+    <section id="contact" class="contact section">
       <div class="text">
         <h1>Contact &nbsp; Me</h1>
         <p>
@@ -369,7 +372,7 @@
           </div>
         </form>
       </div>
-    </div>
+    </section>
 
     <footer>
       <span>Developed by <a href="#">B A A</a> All Rights are reserved</span>
