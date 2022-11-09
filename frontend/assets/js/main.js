@@ -75,7 +75,6 @@ import contact from "./app/contact.js";
         document
           .querySelector(".menu_nav a[href*=" + sectionId + "]")
           .classList.add("active");
-        console.log(sectionId);
       } else {
         document
           .querySelector(".menu_nav a[href*=" + sectionId + "]")
