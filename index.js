@@ -1,8 +1,11 @@
 import express from "express";
-import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import msgRoute from "./backend/routes/msgRoute.js";
+import connectDB from "./backend/config/db.js";
+
+connectDB();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
