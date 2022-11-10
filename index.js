@@ -6,13 +6,14 @@ import msgRoute from "./backend/routes/msgRoute.js";
 import connectDB from "./backend/config/db.js";
 
 connectDB();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 dotenv.config();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "./frontend")));
 app.use("/api/send-msg", msgRoute);
 
