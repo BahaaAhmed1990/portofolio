@@ -10,11 +10,12 @@ const msgSchema = new Schema(
     email: {
       type: String,
       require: [true, "Please add an email"],
-      unique: true,
+      unique: false,
     },
     subject: {
       type: String,
-      require: [true, "Please add a subject"],
+      require: [false, "Please add a subject"],
+      default: "Not Added",
     },
     msgText: {
       type: String,

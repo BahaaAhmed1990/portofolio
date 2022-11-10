@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import msgRoute from "./backend/routes/msgRoute.js";
 import connectDB from "./backend/config/db.js";
+import errHandler from "./backend/middlewares/errMiddleWare.js";
 
 connectDB();
 const __filename = fileURLToPath(import.meta.url);
@@ -21,4 +22,5 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./", "frontend", "index.html"));
 });
 
+app.use(errHandler);
 app.listen(process.env.PORT, () => console.log("server is running on 3222"));

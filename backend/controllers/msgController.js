@@ -1,16 +1,19 @@
 import Msg from "../models/msgModel.js";
 import asyncWrapper from "../middlewares/asyncWrapper.js";
 
+// @desc add new message
+// @route POST /api/send-msg
+// @access public
 const sendMsg = asyncWrapper(async (req, res) => {
-  console.log("msg sent");
-  const message = await Msg.create({
-    name: "bahaa",
-    email: "baa@gmail.com",
-    subject: "question",
-    msgText: "how are you ?!!",
-  });
+  const { name, email, subject, msgText } = req.body;
+  // console.log(name, email, subject, msgText);
+  if (!name || !email || !msgText) {
+    res.status(500);
+    throw new Error("please add all fields");
+  }
+  const msg = await Msg.create({ name, email, subject, msgText });
+  res.json(msg);
   res.status(201);
-  res.send(message);
 });
 
 export { sendMsg };
