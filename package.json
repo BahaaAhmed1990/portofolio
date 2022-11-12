@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "compile": "sass --watch frontend/scss:frontend/assets/css",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "deploy":"node index.js"
   },
   "keywords": [],
   "author": "",
