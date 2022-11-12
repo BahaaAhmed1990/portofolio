@@ -12,6 +12,9 @@
     <script src="./assets/js/vendors/jquery.tagcanvas.js"></script>
     <!-- isotobe  -->
     <script src="./assets/js/vendors/isotobe.js"></script>
+    <!-- axios -->
+    <script src="./assets/js/vendors/axios.min.js"></script>
+
     <script type="module" src="./assets/js/main.js" defer></script>
 
     <link
@@ -337,6 +340,7 @@
           <div class="form-control half">
             <input type="text" name="name" id="name" placeholder="Name" />
             <label for="name" class="name-label"></label>
+            <p id="name-msg" class="err-msg"></p>
           </div>
           <div class="form-control half">
             <input
@@ -350,6 +354,7 @@
           <div class="form-control">
             <input type="email" name="mail" id="mail" placeholder="E-mail" />
             <label for="email" class="email-label"></label>
+            <p id="mail-msg" class="err-msg"></p>
           </div>
           <div class="form-control" id="textarea">
             <textarea
@@ -360,9 +365,10 @@
               placeholder="message"
             ></textarea>
             <label class="textarea-label"></label>
+            <p id="textare-msg" class="err-msg"></p>
           </div>
           <div class="form-control">
-            <a href class="flat-btn">
+            <a class="flat-btn" id="submit">
               <div>
                 <span class="bg"></span>
                 <span class="base"></span>

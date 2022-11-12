@@ -42,6 +42,64 @@ export default (function () {
       $("#msg").on("blur", function () {
         $(".textarea-label").css("transform", "translate3d(100%,0,0)");
       });
+
+      $("#submit").click((e) => {
+        e.preventDefault();
+        const name = $("#name").val();
+        const email = $("#mail").val();
+        const subject = $("#subject").val();
+        const msgText = $("#msg").val();
+
+        const checkInputsResult = this.validateInputs(name, email, msgText);
+        subject ? subject : undefined;
+
+        console.log(checkInputsResult);
+        console.log(subject);
+        if (checkInputsResult) {
+          axios({
+            method: "post",
+            url: "/api/send-msg",
+            data: {
+              name,
+              email,
+              subject,
+              msgText,
+            },
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then(function (res) {
+              console.log(res.data);
+            })
+            .catch(function (err) {
+              console.log(err.msg);
+            });
+        }
+      });
+    },
+    validateInputs: function (name, email, msgText) {
+      let valid = true;
+
+      const errMsg = $(".err-msg");
+      errMsg.text("");
+
+      if (!/^[a-z ,.'-]+$/i.test(name)) {
+        valid = false;
+        $("#name").css("box-shadow", "inset #bb6ef5 0px 1px 2px 1px");
+        $("#name-msg").text("names can contain only letters");
+      }
+      if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)) {
+        valid = false;
+        $("#mail").css("box-shadow", "inset #bb6ef5 0px 1px 2px 1px");
+        $("#mail-msg").text("please add a valid E-mail");
+      }
+      if (!msgText) {
+        valid = false;
+        $("#msg").css("box-shadow", "inset #bb6ef5 0px 1px 2px 1px");
+        $("#textare-msg").text("please add your message");
+      }
+      return valid;
     },
   };
   return contact;

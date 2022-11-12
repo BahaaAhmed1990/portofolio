@@ -739,6 +739,7 @@
 }
 .contact .form .form-control {
   overflow: hidden;
+  margin-bottom: 10px;
 }
 .contact .form input[type=text],
 .contact .form input[type=email],
@@ -784,16 +785,19 @@
   position: relative;
   width: 100%;
   display: block;
-  height: 23px;
+  height: 4px;
   overflow: hidden;
+  font-size: 0.8rem;
+  color: #8d8d8d;
 }
 .contact .form label::after {
   content: "";
   position: absolute;
+  bottom: 0;
   height: 1px;
   width: 100%;
   background-color: #87e578;
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-200%, 0, 0);
   transition: transform 0.3s ease-in-out;
 }
 .contact .form .name-label::after,
@@ -804,7 +808,7 @@
   transform: translate3d(0, 0, 0);
 }
 .contact .form .textarea-label {
-  border-top: 1px solid #87e578;
+  border-top: 1px solid brown;
   transition: transform 0.3s ease-in-out;
   transform: translate3d(100%, 0, 0);
 }
@@ -813,6 +817,12 @@
 }
 .contact .form textarea:focus::placeholder {
   color: transparent;
+}
+.contact .form .err-msg {
+  color: #8d8d8d;
+  margin: 0;
+  height: 20px;
+  color: #87e578;
 }
 .contact .form .flat-btn {
   color: #bb6ef5;
