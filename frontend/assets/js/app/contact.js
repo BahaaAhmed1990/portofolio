@@ -51,11 +51,12 @@ export default (function () {
         const msgText = $("#msg").val();
 
         const checkInputsResult = this.validateInputs(name, email, msgText);
-        subject ? subject : undefined;
 
-        console.log(checkInputsResult);
-        console.log(subject);
-        if (checkInputsResult) {
+        $("#name").val("");
+        $("#msg").val("");
+        $("#mail").val("");
+        $("#mail").val("");
+        if (true) {
           axios({
             method: "post",
             url: "/api/send-msg",
@@ -70,10 +71,27 @@ export default (function () {
             },
           })
             .then(function (res) {
-              console.log(res.data);
+              $("#name").val("");
+              $("#msg").val("");
+              $("#mail").val("");
+              $("#mail").val("");
+              $(".alert")
+                .removeClass("hide")
+                .addClass("show")
+                .text("Message sent");
+              setTimeout(function () {
+                $(".alert").removeClass("show").addClass("hide").text("");
+              }, 5000);
             })
             .catch(function (err) {
-              console.log(err.msg);
+              $(".alert")
+                .removeClass("hide")
+                .addClass("show")
+                .text("something went wrong please try again");
+              console.log(err.message);
+              setTimeout(function () {
+                $(".alert").removeClass("show").addClass("hide").text("");
+              }, 5000);
             });
         }
       });

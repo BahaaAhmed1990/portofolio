@@ -8,13 +8,28 @@ footer {
   justify-content: space-around;
   height: 30px;
   align-items: center;
-
+  // small devices style
+  @include respond-to("sm") {
+    padding-left: 0;
+  }
+  // medium devices style
+  @include respond-to("md") {
+    padding-left: 0;
+  }
+  // extra small devices style
+  @include respond-to("sm") {
+    font-size: 0.7rem;
+  }
+  span {
+    text-align: center;
+  }
   span a {
     color: $pink;
   }
 
   a {
     color: white;
+    text-align: center;
     span {
       color: $pink;
     }

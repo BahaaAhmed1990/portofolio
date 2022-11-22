@@ -1,0 +1,68 @@
+@use "../custom" as *;
+@use "../components/mixins.scss" as *;
+.alert {
+  position: fixed;
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 25px 0;
+  width: 220px;
+  top: 75vh;
+  background-color: rgb(0 0 0 / 16%);
+  z-index: 9;
+  left: 74vw;
+  border-radius: 5px;
+  transform: translateX(120%);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid;
+  // very large devices style
+  @include respond-to("lg") {
+    left: 70vw;
+  }
+  // medium devices style
+  @include respond-to("md") {
+    left: 60vw;
+  }
+  // small devices style
+  @include respond-to("sm") {
+    left: 45vw;
+    font-size: 0.5rem;
+    width: 190px;
+  }
+  &.show {
+    animation: show-msg;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    @keyframes show-msg {
+      0% {
+        display: none;
+        transform: translateX(200%);
+      }
+      80% {
+        transform: translateX(-20%);
+      }
+      100% {
+        transform: translateX(0);
+        display: block;
+      }
+    }
+  }
+  &.hide {
+    animation: hide-msg;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    @keyframes hide-msg {
+      0% {
+        transform: translateX(0%);
+      }
+      80% {
+        transform: translateX(-20%);
+      }
+      100% {
+        transform: translateX(200%);
+        display: none;
+      }
+    }
+  }
+}
