@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const { Schema } = mongoose;
 
 const msgSchema = new Schema(
@@ -22,7 +23,9 @@ const msgSchema = new Schema(
       require: [true, "please add your message"],
     },
   },
-  { collection: "messages" }
+  {
+    timestamps: true,
+  }
 );
 
 const msgModel = mongoose.model("Msg", msgSchema);

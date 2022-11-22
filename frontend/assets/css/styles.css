@@ -952,7 +952,7 @@ footer a span {
   z-index: 9;
   left: 74vw;
   border-radius: 5px;
-  transform: translateX(120%);
+  transform: translateX(200%);
   transition: all 0.3s ease-in-out;
   border: 1px solid;
 }

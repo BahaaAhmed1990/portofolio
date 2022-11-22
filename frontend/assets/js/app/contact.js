@@ -56,7 +56,7 @@ export default (function () {
         $("#msg").val("");
         $("#mail").val("");
         $("#mail").val("");
-        if (true) {
+        if (checkInputsResult) {
           axios({
             method: "post",
             url: "/api/send-msg",
