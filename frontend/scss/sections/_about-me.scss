@@ -54,6 +54,9 @@
         text-align: justify;
         transform: translate3d(0, -800%, 0);
         margin-bottom: 0.8rem;
+        a {
+          color: $pink;
+        }
       }
     }
   }

@@ -459,6 +459,9 @@
   transform: translate3d(0, -800%, 0);
   margin-bottom: 0.8rem;
 }
+.about-me .left-side_text p a {
+  color: #87e578;
+}
 .about-me .right-side {
   width: 60%;
   display: flex;
